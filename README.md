@@ -6,14 +6,14 @@ Works same as brainfuck:
 
 |command|BF equivalent|
 |-------|-------------|
-| eee   | `+`         |
-| eeE   | `-`         |
-| eEe   | `<`         |
-| eEE   | `>`         |
-| Eee   | `[`         |
-| EeE   | `]`         |
-| EEe   | `.`         |
-| EEE   | `,`         |
+| `eee` | `+`         |
+| `eeE` | `-`         |
+| `eEe` | `<`         |
+| `eEE` | `>`         |
+| `Eee` | `[`         |
+| `EeE` | `]`         |
+| `EEe` | `.`         |
+| `EEE` | `,`         |
 
 A file needs to start with `skr`.
 
