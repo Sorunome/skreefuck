@@ -2,14 +2,14 @@
 import sys
 
 if len(sys.argv) < 2:
-	print('Needs a file to skree')
+	print('Needs a file to SKREEeeEeeEE')
 	sys.exit(-1)
 
 with open(sys.argv[1], 'r') as f:
 	data = f.read()
 
 if data[0:3].lower() != 'skr':
-	print('Skree needs to start with skr')
+	print('Wrong skree file SKREEeeEeeEE')
 	sys.exit(-1)
 
 counter = 3
