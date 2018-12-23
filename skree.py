@@ -41,12 +41,12 @@ while data[counter*3:(counter+1)*3]:
 	elif skre == 'eEE': # >
 		band_position += 1
 	elif skre == 'Eee': # [
-		stack.append(counter - 1) # we want to re-push
+		stack.append(counter) # we want to re-push
 	elif skre == 'EeE': # ]
 		p = stack.pop()
 		if get_band(band_position):
 			# do the jump
-			counter = p
+			counter = p - 1
 	elif skre == 'EEe': # .
 		print(chr(get_band(band_position)), end='')
 	elif skre == 'EEE': # ,
