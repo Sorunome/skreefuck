@@ -12,7 +12,7 @@ if data[0:3].lower() != 'skr':
 	print('Skree needs to start with skr')
 	sys.exit(-1)
 
-counter = 1
+counter = 3
 band_position = 0
 band = {}
 def get_band(x):
@@ -27,8 +27,8 @@ def set_band(x, n):
 	get_band(x) # make sure it exists
 	band[x] = int(n)
 stack = []
-while data[counter*3:(counter+1)*3]:
-	skre = data[counter*3:(counter+1)*3]
+while data[counter:counter+3]:
+	skre = data[counter:counter+3]
 	if skre.lower() != 'eee':
 		counter += 1
 		continue
@@ -41,12 +41,13 @@ while data[counter*3:(counter+1)*3]:
 	elif skre == 'eEE': # >
 		band_position += 1
 	elif skre == 'Eee': # [
-		stack.append(counter) # we want to re-push
+		stack.append(counter)
 	elif skre == 'EeE': # ]
 		p = stack.pop()
 		if get_band(band_position):
 			# do the jump
-			counter = p - 1
+			counter = p
+			continue
 	elif skre == 'EEe': # .
 		print(chr(get_band(band_position)), end='')
 	elif skre == 'EEE': # ,
@@ -55,5 +56,8 @@ while data[counter*3:(counter+1)*3]:
 		except:
 			num = 0
 		set_band(band_position, num)
+	else:
+		counter += 1
+		continue
 	
-	counter += 1
+	counter += 3
